@@ -1,0 +1,75 @@
+body {
+	font-family: 'Gudea', Arial, sans-serif;
+	color: #fff;
+}
+
+p {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.bio {
+	padding: 0 20px 20px 20px;
+}
+
+h1, h2 {
+	font-weight: 300;
+}
+
+p, h1, h2 {
+	text-align: center;
+}
+
+h2 {
+	padding: 0 20px;
+	color: #ffff00;
+}
+
+.card {
+	width: 33%;
+	min-width: 400px; /* Layout adapts nicely to getting real skinny, but I'd prefer it didn't get too much so */
+	background: #141414;
+	margin: 20px auto;
+	border-radius: 10px;
+	overflow: hidden; /* This is needed to keep the pointy end of our secret triangle from jutting out */
+}
+
+.card header img {
+	width: 170px; /*If we actually set a % width here, image will not line up w/ its background properly on resize, b/c it will shrink!!!*/
+	border-radius: 50%;
+	position: relative;
+	margin-top: 20%;
+	bottom: -70px;
+	left: 7%;
+	z-index: 1;
+}
+
+.img-back {
+	background-image: url("eugene_background6.jpg");
+	background-size: cover;
+	margin-bottom: 85px;
+	min-height: 220px; /*Keeps picture from shrinking dramatically on narrowing of window*/
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.img-back:after {
+	position: relative;
+	content: '';
+	border-style: solid;
+	border-width: 150px 0 0 1200px;
+	border-color: transparent transparent transparent #141414;
+	bottom: -110px;
+} /*This is basically a blackish-grey triangle, the bottom of which blends into the background of .card*/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /* This will target IE10+ */
+	.img-back:after {
+		right: 200px; /* For some reason IE shifts this element to the right, so we need to compensate */
+	}
+}
+
+.headers {
+	position: relative; /*This is needed to apply z-index ... which is needed to keep text on top of .img-back:after*/
+	z-index: 1;
+	margin-top: 90px; /*Move text out of the way of bottom end of .img-back:after*/
+}
