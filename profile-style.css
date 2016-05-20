@@ -45,7 +45,7 @@ h2 {
 }
 
 .img-back {
-	background-image: url("eugene_background6.jpg");
+	background-image: url("https://cloud.githubusercontent.com/assets/16431715/15415376/3e400e1c-1e10-11e6-8313-1b3bb6534051.JPG");
 	background-size: cover;
 	margin-bottom: 85px;
 	min-height: 220px; /*Keeps picture from shrinking dramatically on narrowing of window*/
